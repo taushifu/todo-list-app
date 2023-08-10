@@ -1,0 +1,144 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    width: 100vw;
+    min-height: 100vh;
+    background-image: linear-gradient(-20deg, #b721ff, #21d4fd);
+    padding: 20px 10px;
+}
+
+.todo_app {
+    max-width: 550px;
+    width: 100%;
+    /* min-height: 35vh; */
+    margin: 20px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.heading_icon {
+    display: flex;
+    align-items: center;
+}
+
+.heading_icon img {
+    margin-right: 10px;
+}
+
+.take_input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+    background-color: #edeef0;
+    border-radius: 10px;
+}
+
+.take_input input {
+    flex: 1;
+    outline: none;
+    border: none;
+    background: transparent;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.take_input button {
+    outline: none;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 10px;
+    background-color: #2196F3;
+    user-select: none;
+}
+
+ul li {
+    list-style: none;
+    user-select: none;
+    font-size: 17px;
+    cursor: pointer;
+    padding: 5px 8px 5px 40px;
+    position: relative;
+
+    /* For iOS */
+    -webkit-tap-highlight-color: transparent;
+
+    /* For some Android browsers */
+    tap-highlight-color: transparent;
+
+}
+
+ul li::before {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-image: url(images/uncheck.png);
+    background-size: cover;
+    background-position: center;
+    top: 9px;
+    left: 8px;
+}
+
+
+ul li.checked {
+    color: #696969;
+    text-decoration: line-through;
+}
+
+ul li.checked::before {
+    background-image: url(images/check.png);
+}
+
+ul li span {
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #555;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+ul li span:hover {
+    background-color: #edeef0;
+}
+
+
+
+/* ------------------media queries------------ */
+@media only screen and (min-width: 600px) {
+    .take_input button:hover {
+        background-color: #55b0fa;
+    }
+}
+
+
+@media only screen and (max-width: 600px) {
+    .take_input input {
+        width: 80%;
+    }
+
+    .take_input button {
+        width: 20%;
+        padding: 10px;
+    }
+
+    .take_input button:active {
+        background-color: #55b0fa;
+    }
+}
